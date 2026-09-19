@@ -1,11 +1,12 @@
 <!-- Source: Best-README-Template BLANK_README (Unlicense) — https://github.com/othneildrew/Best-README-Template -->
 <a id="readme-top"></a>
 
-# 3x Ui
+# 3x-ui
 
-3x UI is an empty repository that holds no code yet.
+A repository scaffold for anyingiit/3x-ui that ships only governance and tooling configuration -- issue and pull request templates, CODEOWNERS, Dependabot, pre-commit hooks, and contributing, security, and license policies -- with no application source code yet.
 
-[![CI](https://github.com/anyingiit/3x-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/anyingiit/3x-ui/actions/workflows/ci.yml)
+**English** · [简体中文](README.zh-CN.md)
+
 [![License](https://img.shields.io/github/license/anyingiit/3x-ui)](LICENSE)
 
 [Report a bug](https://github.com/anyingiit/3x-ui/issues/new?template=bug_report.yml) · [Request a feature](https://github.com/anyingiit/3x-ui/issues/new?template=feature_request.yml)
@@ -24,7 +25,7 @@
 
 ## About The Project
 
-3x UI is an empty repository that holds no code yet.
+This repository currently holds only the GitHub-facing scaffolding a project needs before it has any code: issue and pull request templates (`.github/ISSUE_TEMPLATE`, `.github/PULL_REQUEST_TEMPLATE.md`), a `CODEOWNERS` file, Dependabot and release-note configuration, a pre-commit hook set (`.pre-commit-config.yaml`), and the contributing, code of conduct, security, and license documents that source code would normally sit alongside. There is no manifest, no entry point, and no application source anywhere in the tree.
 
 See the [open issues](https://github.com/anyingiit/3x-ui/issues) for planned features and known issues.
 
@@ -32,20 +33,28 @@ See the [open issues](https://github.com/anyingiit/3x-ui/issues) for planned fea
 
 ### Prerequisites
 
-- Git
+- Git, to clone the repository.
+- Python 3.9 or newer with `pip install pre-commit`, only if you want to run the hook set in `.pre-commit-config.yaml` locally; nothing here needs a compiler or runtime beyond that.
 
 ### Installation
 
 ```sh
 git clone https://github.com/anyingiit/3x-ui.git
 cd 3x-ui
+pre-commit install  # optional: runs the hooks below before each commit
 ```
+
+There is no build step: cloning gives you the complete contents of the repository as it stands today.
 
 ## Usage
 
+The only thing that currently runs is the pre-commit hook set:
+
 ```sh
-3x-ui --help
+pre-commit run --all-files
 ```
+
+This checks the tracked files for trailing whitespace, a missing final newline, invalid YAML, unresolved merge-conflict markers, and accidentally committed large files, per `.pre-commit-config.yaml`. Beyond that, use the templates under `.github/ISSUE_TEMPLATE` and `.github/PULL_REQUEST_TEMPLATE.md` to report a bug, request a feature, or propose a change.
 
 ## Contributing
 
